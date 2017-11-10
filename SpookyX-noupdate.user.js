@@ -2,7 +2,7 @@
 // @name          SpookyX
 // @description   Enhances functionality of FoolFuuka boards. Developed further for more comfortable ghost-posting on the moe archives.
 // @author        Fiddlekins
-// @version       32.50
+// @version       32.50.1
 // @namespace     https://github.com/Fiddlekins/SpookyX
 // @include       http://archive.4plebs.org/*
 // @include       https://archive.4plebs.org/*
@@ -38,7 +38,7 @@
 // ==/UserScript==
 
 if (GM_info === undefined) {
-	var GM_info = {script: {version: '32.50'}};
+	var GM_info = {script: {version: '32.50.1'}};
 }
 
 var settings = {
@@ -59,7 +59,7 @@ var settings = {
 							"name": "Firefox Compatibility Mode",
 							"description": "Turn this on to allow you to use the controls on an expanded video without collapsing it",
 							"type": "checkbox",
-							"value": false
+							"value": true
 						}
 					}
 				},
@@ -67,25 +67,25 @@ var settings = {
 					"name": "Delayed Load",
 					"description": "Fullsize images are not automatically retrieved and used to replace the thumbnails. Instead this occurs on an individual basis when the thumbnails are clicked on",
 					"type": "checkbox",
-					"value": false
+					"value": true
 				},
 				"imageHover": {
 					"name": "Image Hover",
 					"description": "Hovering over images with the mouse brings a full or window scaled version in view",
 					"type": "checkbox",
-					"value": true
+					"value": false
 				},
 				"videoHover": {
 					"name": "Video Hover",
 					"description": "Hovering over videos with the mouse brings a full or window scaled version in view",
 					"type": "checkbox",
-					"value": true
+					"value": false
 				},
 				"autoplayGifs": {
 					"name": "Autoplay embedded gifs",
 					"description": "Make embedded gifs play automatically",
 					"type": "checkbox",
-					"value": true
+					"value": false
 				},
 				"autoplayVids": {
 					"name": "Autoplay embedded videos",
@@ -137,13 +137,13 @@ var settings = {
 			"name": "Embed Media",
 			"description": "Embed image (and other media) links in thread",
 			"type": "checkbox",
-			"value": true,
+			"value": false,
 			"suboptions": {
 				"embedVideos": {
 					"name": "Embed Videos",
 					"description": "Embed video links in thread",
 					"type": "checkbox",
-					"value": true
+					"value": false
 				},
 				"imgNumMaster": {
 					"name": "Embed Count",
@@ -155,7 +155,7 @@ var settings = {
 					"name": "Title YouTube links",
 					"description": "Fetches the video name and alters the link text accordingly",
 					"type": "checkbox",
-					"value": true
+					"value": false
 				}
 			}
 		},
@@ -172,7 +172,7 @@ var settings = {
 			"name": "Embed Galleries",
 			"description": "Embed Imgur galleries into a single post for ease of image dumps",
 			"type": "checkbox",
-			"value": true,
+			"value": false,
 			"suboptions": {
 				"showDetails": {
 					"name": "Show Details",
@@ -278,7 +278,7 @@ var settings = {
 			"name": "Enable notifications",
 			"description": "Browser notifications will be enabled, for example to alert you when your post has been replied to or if you encountered a posting error",
 			"type": "checkbox",
-			"value": true,
+			"value": false,
 			"suboptions": {
 				"spoiler": {
 					"name": "Hide spoilers",
@@ -376,7 +376,7 @@ var settings = {
 			"name": "Post Counter",
 			"description": "Add a post counter to the reply box",
 			"type": "checkbox",
-			"value": true,
+			"value": false,
 			"suboptions": {
 				"location": {
 					"name": "Location",
@@ -593,7 +593,7 @@ var settings = {
 			"name": "Label Deletions",
 			"description": "Enabling this will add 'Deleted' to all trashcan icons that designate deleted posts to allow for easier searching",
 			"type": "checkbox",
-			"value": false
+			"value": true
 		}
 	},
 	"FilterSettings": {
@@ -2455,14 +2455,14 @@ function postFlow(){
 		var wordBreak = settings.UserSettings.postFlow.suboptions.wordBreak.value.value;
 		if (wordBreak === 'Auto') {
 			if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) { // If using Firefox
-				$('#SpookyX-css-word-break').html('.text{word-break:break-all}');
+				$('#SpookyX-css-word-break').html('.text{overflow-wrap: break-word !important;}');
 			} else {
-				$('#SpookyX-css-word-break').html('');
+				$('#SpookyX-css-word-break').html('.text{word-break:normal}');
 			}
 		} else if (wordBreak === 'Break-all') {
 			$('#SpookyX-css-word-break').html('.text{word-break:break-all}');
 		} else if (wordBreak === 'Overflow-Wrap') {
-				$('#SpookyX-css-word-break').html('.text{overflow-wrap: break-word}');
+			$('#SpookyX-css-word-break').html('.text{overflow-wrap: break-word !important;}');
 		} else { // wordBreak == Normal
 			$('#SpookyX-css-word-break').html('.text{word-break:normal}');
 		}
