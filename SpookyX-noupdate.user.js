@@ -53,7 +53,7 @@ var settings = {
 					"name": "Inline Videos",
 					"description": "Replace thumbnails of natively posted videos with the videos themselves",
 					"type": "checkbox",
-					"value": true,
+					"value": false,
 					"suboptions": {
 						"firefoxCompatibility": {
 							"name": "Firefox Compatibility Mode",
@@ -214,7 +214,7 @@ var settings = {
 			"name": "New Posts",
 			"description": "Reflect the number of new posts in the tab name",
 			"type": "checkbox",
-			"value": true
+			"value": false
 		},
 		"favicon": {
 			"name": "Favicon",
@@ -519,7 +519,7 @@ var settings = {
 					"name": "Word-break",
 					"description": "Firefox runs into difficulties with breaking really long words, test the options available until you find something that works. On auto this attempts to detect browser and select the most appropriate setting",
 					"type": "select",
-					"value": {"value": "Auto", "options": ["Auto", "Break-all", "Normal", "Overflow-Wrap"]}
+					"value": {"value": "Overflow-Wrap", "options": ["Auto", "Break-all", "Normal", "Overflow-Wrap"]}
 				}
 			}
 		},
