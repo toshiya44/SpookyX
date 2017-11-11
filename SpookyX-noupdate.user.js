@@ -2,7 +2,7 @@
 // @name          SpookyX
 // @description   Enhances functionality of FoolFuuka boards. Developed further for more comfortable ghost-posting on the moe archives.
 // @author        Fiddlekins
-// @version       32.50.4
+// @version       32.50.5
 // @namespace     https://github.com/Fiddlekins/SpookyX
 // @include       http://archive.4plebs.org/*
 // @include       https://archive.4plebs.org/*
@@ -39,7 +39,7 @@
 // ==/UserScript==
 
 if (GM_info === undefined) {
-	var GM_info = {script: {version: '32.50.4'}};
+	var GM_info = {script: {version: '32.50.5'}};
 }
 
 var settings = {
@@ -369,7 +369,7 @@ var settings = {
 					"name": "Remove Reset",
 					"description": "Remove the reset button from the reply box to prevent unwanted usage",
 					"type": "checkbox",
-					"value": false
+					"value": true
 				}
 			}
 		},
@@ -564,7 +564,7 @@ var settings = {
 									"name": "Settings button",
 									"description": "Display the settings button in contracted headerbar",
 									"type": "checkbox",
-									"value": false
+									"value": true
 								},
 								"postCounter": {
 									"name": "Post counter",
