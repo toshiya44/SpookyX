@@ -2,7 +2,7 @@
 // @name          SpookyX
 // @description   Enhances functionality of FoolFuuka boards. Developed further for more comfortable ghost-posting on the moe archives.
 // @author        Fiddlekins
-// @version       32.50.2
+// @version       32.50.4
 // @namespace     https://github.com/Fiddlekins/SpookyX
 // @include       http://archive.4plebs.org/*
 // @include       https://archive.4plebs.org/*
@@ -28,6 +28,7 @@
 // @include       https://archiveofsins.com/*
 // @include       http://thebarchive.com/*
 // @include       https://thebarchive.com/*
+// @include       https://rbt.asia/*
 // @include       http://archive.whatisthisimnotgoodwithcomputers.com/*
 // @include       https://archive.whatisthisimnotgoodwithcomputers.com/*
 // @require       https://cdn.rawgit.com/madapaja/jquery.selection/master/src/jquery.selection.js
@@ -38,7 +39,7 @@
 // ==/UserScript==
 
 if (GM_info === undefined) {
-	var GM_info = {script: {version: '32.50.2'}};
+	var GM_info = {script: {version: '32.50.4'}};
 }
 
 var settings = {
