@@ -2,7 +2,7 @@
 // @name          SpookyX
 // @description   Enhances functionality of FoolFuuka boards. Developed further for more comfortable ghost-posting on the moe archives.
 // @author        Fiddlekins
-// @version       32.50.5
+// @version       32.50.6
 // @namespace     https://github.com/Fiddlekins/SpookyX
 // @include       http://archive.4plebs.org/*
 // @include       https://archive.4plebs.org/*
@@ -39,7 +39,7 @@
 // ==/UserScript==
 
 if (GM_info === undefined) {
-	var GM_info = {script: {version: '32.50.5'}};
+	var GM_info = {script: {version: '32.50.6'}};
 }
 
 var settings = {
@@ -2456,16 +2456,16 @@ function postFlow(){
 		var wordBreak = settings.UserSettings.postFlow.suboptions.wordBreak.value.value;
 		if (wordBreak === 'Auto') {
 			if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) { // If using Firefox
-				$('#SpookyX-css-word-break').html('.text{overflow-wrap: break-word !important;}');
+				$('#SpookyX-css-word-break').html('.text{word-break: break-all !important;}');
 			} else {
-				$('#SpookyX-css-word-break').html('.text{word-break:normal}');
+				$('#SpookyX-css-word-break').html('.text{word-break: normal;}');
 			}
 		} else if (wordBreak === 'Break-all') {
-			$('#SpookyX-css-word-break').html('.text{word-break:break-all}');
+			$('#SpookyX-css-word-break').html('.text{word-break: break-all;}');
 		} else if (wordBreak === 'Overflow-Wrap') {
-			$('#SpookyX-css-word-break').html('.text{overflow-wrap: break-word !important;}');
+			$('#SpookyX-css-word-break').html('.text{overflow-wrap: break-word !important; max-width: 80vw !important;}');
 		} else { // wordBreak == Normal
-			$('#SpookyX-css-word-break').html('.text{word-break:normal}');
+			$('#SpookyX-css-word-break').html('.text{word-break:normal;}');
 		}
 	} else {
 		$('#main').css({
